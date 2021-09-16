@@ -59,6 +59,13 @@ namespace LinqExercises
                 yield return new Person(firstNames, CommonLastNames[idxLastNames], birthDate, Gender.Female);
                 idxLastNames++;
             }
+
+            yield return new Student(
+                "Student",
+                "LastName",
+                GenerateDateOfBirth(new DateTime(1930, 1, 1), random),
+                Gender.Female,
+                "Universitatea Spiru Haret");
         }
     }
 }
