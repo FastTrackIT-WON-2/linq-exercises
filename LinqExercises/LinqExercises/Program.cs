@@ -7,7 +7,54 @@ namespace LinqExercises
     {
         static void Main(string[] args)
         {
-            
+            /*
+            var query = from person in PersonsDatabase.AllPersons()
+                        where person.Age > 14 && person.LastName.StartsWith("M")
+                        select person;
+            */
+
+            var query = PersonsDatabase.AllPersons()
+                            .Where(person => person.Age > 14 && person.LastName.StartsWith("M"));
+
+            foreach (var person in PersonsDatabase.AllPersons())
+            {
+                person.Print();
+            }
+
+            Console.WriteLine("--------------------------------");
+            Console.WriteLine("Query results");
+            Console.WriteLine("--------------------------------");
+
+            foreach (var person in query)
+            {
+                person.Print();
+            }
+        }
+
+        private static void FilterOperator_Where_PersonsOver14StartingWithM()
+        {
+            /*
+            var query = from person in PersonsDatabase.AllPersons()
+                        where person.Age > 14 && person.LastName.StartsWith("M")
+                        select person;
+            */
+
+            var query = PersonsDatabase.AllPersons()
+                            .Where(person => person.Age > 14 && person.LastName.StartsWith("M"));
+
+            foreach (var person in PersonsDatabase.AllPersons())
+            {
+                person.Print();
+            }
+
+            Console.WriteLine("--------------------------------");
+            Console.WriteLine("Query results");
+            Console.WriteLine("--------------------------------");
+
+            foreach (var person in query)
+            {
+                person.Print();
+            }
         }
 
         private static void Sample1_SelectEvenNumbers()
